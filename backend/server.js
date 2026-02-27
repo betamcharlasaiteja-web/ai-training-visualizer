@@ -75,6 +75,18 @@ app.post('/api/train', (req, res) => {
     }
 });
 
+// GET / — root landing (so Render URL shows something useful)
+app.get('/', (req, res) => {
+    res.json({
+        service: 'AI Training Visualizer API',
+        status: 'running',
+        endpoints: {
+            'POST /api/train': 'Start training simulation (body: { epochs, learningRate, batchSize })',
+            'GET /api/health': 'Health check',
+        },
+    });
+});
+
 // GET /api/health — health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: Date.now() });
