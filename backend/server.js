@@ -2,9 +2,14 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://127.0.0.1:3000'] }));
+// Allow all origins in production (Render/Vercel), restrict in dev
+const allowedOrigins = process.env.NODE_ENV === 'production'
+    ? '*'
+    : ['http://localhost:3000', 'http://127.0.0.1:3000'];
+
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 /**
