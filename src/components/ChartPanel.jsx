@@ -63,7 +63,7 @@ function ChartPanel({ trainingData, isLoading }) {
     return (
         <div className="glass-card p-5" id="chart-panel">
             <div className="flex items-center gap-3 mb-5">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-emerald to-accent-cyan flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-emerald to-primary-500 flex items-center justify-center">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                     </svg>
@@ -85,7 +85,7 @@ function ChartPanel({ trainingData, isLoading }) {
                     style={{ background: 'var(--glass-bg)', borderColor: 'var(--glass-border)' }}
                 >
                     <h4 className="text-xs font-semibold mb-3 flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
-                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                        <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#e76f51' }} />
                         Loss vs Epoch
                     </h4>
                     <div style={{ height: 220 }}>
@@ -93,8 +93,8 @@ function ChartPanel({ trainingData, isLoading }) {
                             <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
                                 <defs>
                                     <linearGradient id="lossGradient" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stopColor="#f43f5e" stopOpacity={0.3} />
-                                        <stop offset="100%" stopColor="#f43f5e" stopOpacity={0} />
+                                        <stop offset="0%" stopColor="#e76f51" stopOpacity={0.3} />
+                                        <stop offset="100%" stopColor="#e76f51" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" />
@@ -114,7 +114,7 @@ function ChartPanel({ trainingData, isLoading }) {
                                 <Area
                                     type="monotone"
                                     dataKey="loss"
-                                    stroke="#f43f5e"
+                                    stroke="#e76f51"
                                     strokeWidth={2.5}
                                     fill="url(#lossGradient)"
                                     dot={false}
@@ -132,7 +132,7 @@ function ChartPanel({ trainingData, isLoading }) {
                     style={{ background: 'var(--glass-bg)', borderColor: 'var(--glass-border)' }}
                 >
                     <h4 className="text-xs font-semibold mb-3 flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                        <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#22c55e' }} />
                         Accuracy vs Epoch
                     </h4>
                     <div style={{ height: 220 }}>
@@ -140,8 +140,8 @@ function ChartPanel({ trainingData, isLoading }) {
                             <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
                                 <defs>
                                     <linearGradient id="accGradient" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stopColor="#10b981" stopOpacity={0.3} />
-                                        <stop offset="100%" stopColor="#10b981" stopOpacity={0} />
+                                        <stop offset="0%" stopColor="#22c55e" stopOpacity={0.3} />
+                                        <stop offset="100%" stopColor="#22c55e" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" />
@@ -161,7 +161,7 @@ function ChartPanel({ trainingData, isLoading }) {
                                 <Area
                                     type="monotone"
                                     dataKey="accuracy"
-                                    stroke="#10b981"
+                                    stroke="#22c55e"
                                     strokeWidth={2.5}
                                     fill="url(#accGradient)"
                                     dot={false}

@@ -48,16 +48,42 @@ export default function Home() {
                 <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <motion.div
-                            className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 via-accent-violet to-accent-cyan flex items-center justify-center shadow-glow-sm"
+                            className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 via-primary-600 to-accent-violet flex items-center justify-center shadow-glow-sm"
                             animate={{ rotate: isTraining ? 360 : 0 }}
                             transition={isTraining ? { duration: 3, repeat: Infinity, ease: 'linear' } : { duration: 0.5 }}
                         >
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93" />
-                                <path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93" />
-                                <path d="M12 22a4 4 0 0 1-4-4c0-1.95 1.4-3.58 3.25-3.93" />
-                                <path d="M12 22a4 4 0 0 0 4-4c0-1.95-1.4-3.58-3.25-3.93" />
-                                <circle cx="12" cy="12" r="2" fill="white" />
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                {/* Brain outline — left hemisphere */}
+                                <path d="M12 2C9.5 2 7.5 3.2 6.5 5C5.2 5.3 4 6.5 3.5 8C2.8 9.8 3 11.5 3.8 13C3.3 14.2 3.2 15.5 3.8 17C4.5 18.8 6 20 7.5 20.5C8.5 21.5 10 22 12 22" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                                {/* Brain outline — right hemisphere */}
+                                <path d="M12 2C14.5 2 16.5 3.2 17.5 5C18.8 5.3 20 6.5 20.5 8C21.2 9.8 21 11.5 20.2 13C20.7 14.2 20.8 15.5 20.2 17C19.5 18.8 18 20 16.5 20.5C15.5 21.5 14 22 12 22" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                                {/* Central stem */}
+                                <line x1="12" y1="4" x2="12" y2="20" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                {/* Left branches */}
+                                <line x1="12" y1="7" x2="7" y2="6" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="10.5" x2="6" y2="10" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="14" x2="6.5" y2="15" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="17" x2="7.5" y2="18.5" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                {/* Right branches */}
+                                <line x1="12" y1="7" x2="17" y2="6" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="10.5" x2="18" y2="10" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="14" x2="17.5" y2="15" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                <line x1="12" y1="17" x2="16.5" y2="18.5" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.8" />
+                                {/* Neural nodes — center */}
+                                <circle cx="12" cy="7" r="1.3" fill="white" />
+                                <circle cx="12" cy="10.5" r="1.3" fill="white" />
+                                <circle cx="12" cy="14" r="1.3" fill="white" />
+                                <circle cx="12" cy="17" r="1.3" fill="white" />
+                                {/* Neural nodes — left */}
+                                <circle cx="7" cy="6" r="1" fill="white" opacity="0.9" />
+                                <circle cx="6" cy="10" r="1" fill="white" opacity="0.9" />
+                                <circle cx="6.5" cy="15" r="1" fill="white" opacity="0.9" />
+                                <circle cx="7.5" cy="18.5" r="1" fill="white" opacity="0.9" />
+                                {/* Neural nodes — right */}
+                                <circle cx="17" cy="6" r="1" fill="white" opacity="0.9" />
+                                <circle cx="18" cy="10" r="1" fill="white" opacity="0.9" />
+                                <circle cx="17.5" cy="15" r="1" fill="white" opacity="0.9" />
+                                <circle cx="16.5" cy="18.5" r="1" fill="white" opacity="0.9" />
                             </svg>
                         </motion.div>
                         <div>
@@ -81,7 +107,7 @@ export default function Home() {
                             >
                                 <motion.div
                                     className="w-2 h-2 rounded-full"
-                                    style={{ background: isTraining ? '#10b981' : '#f59e0b' }}
+                                    style={{ background: isTraining ? '#22c55e' : '#c2742e' }}
                                     animate={isTraining ? { scale: [1, 1.3, 1] } : {}}
                                     transition={{ repeat: Infinity, duration: 1 }}
                                 />

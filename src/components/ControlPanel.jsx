@@ -27,7 +27,7 @@ function ControlPanel({
         <div className="glass-card p-6 space-y-6" id="control-panel">
             {/* Header */}
             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-violet flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="3" />
                         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
@@ -87,8 +87,8 @@ function ControlPanel({
                             onClick={() => onUpdateParam('batchSize', size)}
                             disabled={isTraining || isLoading || isPaused}
                             className={`py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${params.batchSize === size
-                                    ? 'bg-gradient-to-br from-primary-500 to-accent-violet text-white shadow-glow-sm'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-glow-sm'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                             style={
                                 params.batchSize !== size
@@ -256,10 +256,14 @@ function ControlPanel({
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="p-3 rounded-xl text-sm border"
-                    style={{ background: 'rgba(244, 63, 94, 0.1)', borderColor: 'rgba(244, 63, 94, 0.3)', color: '#f87171' }}
+                    style={{ background: 'rgba(231, 111, 81, 0.1)', borderColor: 'rgba(231, 111, 81, 0.3)', color: '#e76f51' }}
                 >
                     <p className="font-medium">⚠️ {error}</p>
-                    <p className="text-xs mt-1 opacity-70">Check that the backend is running on port 3001</p>
+                    <p className="text-xs mt-1 opacity-70">
+                        {typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+                            ? 'Backend may be waking up (free tier). Try again in 30s.'
+                            : 'Check that the backend is running on port 3001'}
+                    </p>
                 </motion.div>
             )}
         </div>

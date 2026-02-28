@@ -19,11 +19,11 @@ function getNodeY(totalNodes, index, height) {
 }
 
 function lossToColor(loss, isTraining) {
-    if (!isTraining) return { node: '#6366f1', glow: 'rgba(99, 102, 241, 0.3)' };
+    if (!isTraining) return { node: '#14b8a6', glow: 'rgba(20, 184, 166, 0.3)' };
     const t = Math.max(0, Math.min(1, 1 - loss));
-    const r = Math.round(239 * (1 - t) + 16 * t);
-    const g = Math.round(68 * (1 - t) + 185 * t);
-    const b = Math.round(68 * (1 - t) + 129 * t);
+    const r = Math.round(231 * (1 - t) + 34 * t);
+    const g = Math.round(111 * (1 - t) + 197 * t);
+    const b = Math.round(81 * (1 - t) + 94 * t);
     return {
         node: `rgb(${r}, ${g}, ${b})`,
         glow: `rgba(${r}, ${g}, ${b}, 0.5)`,
@@ -59,7 +59,7 @@ function NeuralNetworkVisualizer({ currentLoss, isTraining, currentEpoch }) {
     return (
         <div className="glass-card p-5 flex flex-col" id="neural-network-visualizer">
             <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-primary-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                         <circle cx="12" cy="12" r="4" />
                         <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" />

@@ -77,14 +77,14 @@ function TrainingStats({ currentStats, bestAccuracy, currentEpoch, totalEpochs, 
                 value={currentEpoch || '—'}
                 suffix={totalEpochs ? `/ ${totalEpochs}` : ''}
                 icon="🔄"
-                color="#6366f1"
+                color="#14b8a6"
                 delay={0}
             />
             <StatCard
                 label="Current Loss"
                 value={currentStats ? currentStats.loss.toFixed(4) : '—'}
                 icon="📉"
-                color="#f43f5e"
+                color="#e76f51"
                 trend={lossTrend}
                 delay={0.05}
             />
@@ -93,7 +93,7 @@ function TrainingStats({ currentStats, bestAccuracy, currentEpoch, totalEpochs, 
                 value={currentStats ? currentStats.accuracy.toFixed(1) : '—'}
                 suffix="%"
                 icon="🎯"
-                color="#10b981"
+                color="#22c55e"
                 trend={accTrend}
                 delay={0.1}
             />
@@ -102,7 +102,7 @@ function TrainingStats({ currentStats, bestAccuracy, currentEpoch, totalEpochs, 
                 value={bestAccuracy > 0 ? bestAccuracy.toFixed(1) : '—'}
                 suffix="%"
                 icon="🏆"
-                color="#f59e0b"
+                color="#d97706"
                 delay={0.15}
             />
         </div>

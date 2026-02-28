@@ -34,10 +34,10 @@ function ThemeToggle() {
             className="relative w-14 h-7 rounded-full p-1 transition-colors duration-300"
             style={{
                 background: isDark
-                    ? 'linear-gradient(135deg, #312e81, #1e1b4b)'
-                    : 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+                    ? 'linear-gradient(135deg, #134e4a, #0c0f17)'
+                    : 'linear-gradient(135deg, #fbbf24, #d97706)',
                 border: '1px solid',
-                borderColor: isDark ? 'rgba(99, 102, 241, 0.3)' : 'rgba(245, 158, 11, 0.3)',
+                borderColor: isDark ? 'rgba(20, 184, 166, 0.3)' : 'rgba(217, 119, 6, 0.3)',
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -48,7 +48,7 @@ function ThemeToggle() {
                 className="w-5 h-5 rounded-full flex items-center justify-center"
                 animate={{
                     x: isDark ? 0 : 26,
-                    background: isDark ? '#818cf8' : '#ffffff',
+                    background: isDark ? '#5eead4' : '#ffffff',
                 }}
                 transition={{ type: 'spring', stiffness: 500, damping: 30 }}
             >

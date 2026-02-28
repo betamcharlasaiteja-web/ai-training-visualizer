@@ -81,7 +81,7 @@ function ParticleField() {
                     itemSize={3}
                 />
             </bufferGeometry>
-            <pointsMaterial size={0.03} color="#6366f1" transparent opacity={0.5} sizeAttenuation />
+            <pointsMaterial size={0.03} color="#14b8a6" transparent opacity={0.5} sizeAttenuation />
         </points>
     );
 }
@@ -89,9 +89,9 @@ function ParticleField() {
 function Scene({ progress, isTraining }) {
     const t = progress / 100;
     const activeColor = useMemo(() => {
-        const r = Math.round(244 * (1 - t) + 16 * t);
-        const g = Math.round(63 * (1 - t) + 185 * t);
-        const b = Math.round(94 * (1 - t) + 129 * t);
+        const r = Math.round(231 * (1 - t) + 34 * t);
+        const g = Math.round(111 * (1 - t) + 197 * t);
+        const b = Math.round(81 * (1 - t) + 94 * t);
         return `rgb(${r}, ${g}, ${b})`;
     }, [t]);
 
@@ -128,14 +128,14 @@ function Scene({ progress, isTraining }) {
     return (
         <>
             <ambientLight intensity={0.3} />
-            <pointLight position={[10, 10, 10]} intensity={0.8} color="#6366f1" />
-            <pointLight position={[-10, -10, -10]} intensity={0.4} color="#22d3ee" />
+            <pointLight position={[10, 10, 10]} intensity={0.8} color="#14b8a6" />
+            <pointLight position={[-10, -10, -10]} intensity={0.4} color="#fbbf24" />
 
             {nodePositions.map((pos, i) => (
                 <NeuronNode
                     key={i}
                     position={pos}
-                    color={isTraining ? activeColor : '#6366f1'}
+                    color={isTraining ? activeColor : '#14b8a6'}
                     speed={isTraining ? 1.5 : 0.5}
                     distort={isTraining ? 0.3 + t * 0.3 : 0.2}
                 />
@@ -146,7 +146,7 @@ function Scene({ progress, isTraining }) {
                     key={i}
                     start={conn.start}
                     end={conn.end}
-                    color={isTraining ? activeColor : '#6366f1'}
+                    color={isTraining ? activeColor : '#14b8a6'}
                 />
             ))}
 

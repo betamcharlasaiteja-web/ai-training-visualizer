@@ -20,8 +20,8 @@ function ProgressSection({ progress, status, currentEpoch, totalEpochs, speed })
             },
             training: {
                 label: 'Training',
-                color: '#10b981',
-                dotColor: 'bg-emerald-400',
+                color: '#22c55e',
+                dotColor: 'bg-green-400',
                 description: `Processing epoch ${currentEpoch} of ${totalEpochs}`,
             },
             paused: {
@@ -32,14 +32,14 @@ function ProgressSection({ progress, status, currentEpoch, totalEpochs, speed })
             },
             complete: {
                 label: 'Complete',
-                color: '#6366f1',
-                dotColor: 'bg-indigo-400',
+                color: '#14b8a6',
+                dotColor: 'bg-teal-400',
                 description: `Training finished — ${totalEpochs} epochs completed`,
             },
             error: {
                 label: 'Error',
-                color: '#f43f5e',
-                dotColor: 'bg-rose-400',
+                color: '#e76f51',
+                dotColor: 'bg-orange-400',
                 description: 'An error occurred. Please retry.',
             },
         };
@@ -104,7 +104,7 @@ function ProgressSection({ progress, status, currentEpoch, totalEpochs, speed })
                 <motion.div
                     className="h-full rounded-full relative"
                     style={{
-                        background: `linear-gradient(90deg, ${statusConfig.color}, #818cf8)`,
+                        background: `linear-gradient(90deg, ${statusConfig.color}, #5eead4)`,
                     }}
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
