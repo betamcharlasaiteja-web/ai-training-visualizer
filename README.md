@@ -224,3 +224,15 @@ npm start
 ## 📄 License
 
 MIT
+
+
+---
+
+## 👨‍💻 Author
+
+** Sai Teja Betamcharla **
+
+- 📧 Email: betamcharlasaiteja@gmail.com 
+- 🔗 GitHub: https://github.com/betamcharlasaiteja-web  
+
+
